@@ -6,13 +6,12 @@ _ft_strcpy:
 iterator:
 			cmp	BYTE [rsi + rax], 0 	; checking if src[i] == 0
 			je	done					; if true, jump to done
-			jmp copy					; copy the byte
-			inc rax						; rax++
-			jmp iterator				; recursive call
-copy:
-			mov dl, BYTE [rsi + rax]	; move src[i] in a 8-bit registry
-			mov BYTE [rdi + rax], dl	; move the byte in the registry to dst[i]
+			mov	dl, BYTE [rsi + rax]	; move src[i] in a 8-bit registry
+			mov	BYTE [rdi + rax], dl	; move the byte in the registry to dst[i]
+			inc	rax						; rax++
+			jmp	iterator				; recursive call
+
 done:
-			mov BYTE [rdi + rax], 0		; null terminate dst
-			mov rax, rdi				; move dst to rax
+			mov	BYTE [rdi + rax], 0		; null terminate dst
+			mov	rax, rdi				; move dst to rax
 			ret							; return rax value
