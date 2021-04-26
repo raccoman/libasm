@@ -29,8 +29,12 @@ FILES =			ft_strlen.s \
 				ft_read.s \
 				ft_strdup.s \
 
-FILES_BONUS =	ft_atoi_base.s \
-
+FILES_BONUS =	ft_atoi_base_bonus.s \
+				ft_list_push_front_bonus.s \
+				ft_list_size_bonus.s \
+				ft_list_sort_bonus.s \
+				ft_list_remove_if_bonus.s
+:
 #Srcs
 SRCS =			$(foreach FILE, $(FILES), $(shell find . -name $(FILE)))
 SRCS_BONUS =	$(foreach FILE, $(FILES_BONUS), $(shell find . -name $(FILE)))
